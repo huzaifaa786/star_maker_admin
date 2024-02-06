@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\SongController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,7 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
 
         Route::group(['middleware' => 'auth:admin'], function () {
             Route::view('dashboard', 'layout.admin')->name('dashboard');
+            Route::resource('song', SongController::class);
         });
     });
 });
