@@ -47,7 +47,7 @@
                     <h4 class="menu-text">Songs Data</h4>
                     <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                 </li>
-                <li class="menu-item menu-item-submenu {{ Request::is('admin/song/*') ? 'menu-item-open menu-item-here' : '' }}"
+                <li class="menu-item menu-item-submenu {{ Request::is('admin/song*') ? 'menu-item-open menu-item-here' : '' }}"
                     aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
                         <i class="menu-icon flaticon-music"></i>
@@ -69,6 +69,15 @@
                                         <span></span>
                                     </i>
                                     <span class="menu-text">Add Song</span>
+                                </a>
+                            </li>
+                            <li class="menu-item {{ Request::is('admin/song') ? 'menu-item-active' : '' }}"
+                                aria-haspopup="true">
+                                <a href="{{ route('admin.song.index') }}" class="menu-link">
+                                    <i class="menu-bullet menu-bullet-dot">
+                                        <span></span>
+                                    </i>
+                                    <span class="menu-text">All Songs</span>
                                 </a>
                             </li>
 

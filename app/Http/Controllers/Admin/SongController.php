@@ -14,7 +14,8 @@ class SongController extends Controller
      */
     public function index()
     {
-        //
+        $songs = Song::all();
+        return view('admin.song.index')->with('songs', $songs);
     }
 
     /**
