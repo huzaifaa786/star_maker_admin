@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::view('/', 'layout.admin')->middleware('auth:admin');
+Route::get('/linkstorage', function () {
+    $targetFolder = base_path() . '/storage/app/public';
+    $linkFolder = $_SERVER['DOCUMENT_ROOT'] . '/storage';
+    symlink($targetFolder, $linkFolder);
+});
 Route::group(['namespace' => 'App\Http\Controllers'], function () {
     //// Admin Routes ///
 
