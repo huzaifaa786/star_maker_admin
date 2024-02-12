@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,12 +12,13 @@ return new class extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->string('room_id');
+            $table->string('room_id')->unique();
             $table->string('host_id');
-            $table->string('host_name');
-            $table->bigInteger('audience_count');
+            $table->string('host_name')->nullable();
+            $table->bigInteger('audience_count')->nullable();
             $table->string('room_type');
-            $table->string('room_status');
+            $table->string('song_id')->nullable();
+            $table->string('room_status')->default('live');
             $table->timestamps();
         });
     }

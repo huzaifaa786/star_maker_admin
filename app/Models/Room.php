@@ -17,5 +17,6 @@ class Room extends Model
         'audience_count',
         'room_type',
         'room_status',
+        'song_id',
     ];
 }
