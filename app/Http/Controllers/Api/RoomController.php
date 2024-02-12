@@ -49,12 +49,12 @@ class RoomController extends Controller
 
     public function getMultiRooms()
     {
-        $rooms = Room::where('room_type', 'multi')->where('room_status', 'live')->get();
+        $rooms = Room::where('room_type', 'multi')->where('room_status', 'live')->with('song')->get();
         return Api::setResponse('rooms', $rooms);
     }
     public function getSoloRooms()
     {
-        $rooms = Room::where('room_type', 'solo')->where('room_status', 'live')->get();
+        $rooms = Room::where('room_type', 'solo')->where('room_status', 'live')->with('song')->get();
         return Api::setResponse('rooms', $rooms);
     }
 }

@@ -19,4 +19,9 @@ class Room extends Model
         'room_status',
         'song_id',
     ];
+
+    public function song()
+    {
+        return $this->belongsTo(Song::class, 'song_id', 'id');
+    }
 }

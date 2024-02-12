@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('host_name')->nullable();
             $table->bigInteger('audience_count')->nullable();
             $table->string('room_type');
-            $table->string('song_id')->nullable();
+            $table->foreignId('song_id')->nullable();
             $table->string('room_status')->default('live');
             $table->timestamps();
         });
